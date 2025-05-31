@@ -58,7 +58,7 @@ body{
 
 
 }
-.boxes:focus{
+.boxes:focus-visible {
     outline: none;
 }
 .disabled{
