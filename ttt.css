@@ -58,7 +58,7 @@ body{
 
 
 }
-button:focus{
+.boxes:focus{
     outline: none;
 }
 .disabled{
