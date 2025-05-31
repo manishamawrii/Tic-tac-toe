@@ -1,7 +1,8 @@
 let boxes = document.querySelectorAll(".boxes")
 let showresult = document.querySelector(".showresult")
 let reset = document.querySelector(".restart")
-
+let winsound = document.getElementById("winSound")
+let movesound = document.getElementById("moveSound")
 let currentPlayer = "❌"
 let game = ["", "", "" , "" , "", "" , "" , "" , "" ]
 let gameOn = true;
@@ -25,6 +26,7 @@ let handleclick = (e) =>
        game[index] =currentPlayer;
        console.log(" e",e.target)
        e.target.textContent = currentPlayer;
+       movesound.play();
         currentPlayer=currentPlayer=="❌"?"⭕":"❌"
        seewhoisthewinner();
        
@@ -36,17 +38,25 @@ let handleclick = (e) =>
            if(game[a]&&game[a]==game[b]&&game[b]==game[c] ) {
 
             showresult.textContent= `🎉 🌟congratulation ${currentPlayer} is winner `
+
             showresult.style.backgroundColor ="green"
             gameOn=false;
+            winsound.play()
+            boxes.forEach(box=>box.classList.add("disabled"))
             return
            }
-          
         }
+          
+        
+    
+            
+        
 
         if(!game.includes(""))
         {
             gameOn= false;
             showresult.textContent=`its a draw `
+            boxes.forEach(box=>box.classList.add("disabled"))
             return;
         }
 
@@ -64,8 +74,11 @@ let handlereset =()=>
      showresult.textContent= ""
      boxes.forEach( box=> {
         box.textContent=""
-        
-     });
+     
+     }
+    )
+    boxes.forEach(box => box.classList.remove("disabled"));
+
 }
 
 
@@ -77,6 +90,4 @@ boxes.forEach(boxes => {
 });
 
 reset.addEventListener("click" , handlereset)
-// Destructuring is a feature in JavaScript that allows you to unpack values from arrays or objects into separate variables in a clean and readable way.
-
-
+// Destructuring is a feature in JavaScript that allows you to unpack values from arrays or objects into separate variables in a clean and readable way

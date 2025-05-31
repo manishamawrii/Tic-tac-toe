@@ -58,6 +58,11 @@ body{
 
 
 }
+.disabled{
+    pointer-events: none;
+    opacity: 0.4;
+    /* background-color: lightgray; */
+}
 
 .restart{
     background-color: rgb(162, 15, 24);
