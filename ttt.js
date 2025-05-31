@@ -46,32 +46,22 @@ let handleclick = (e) =>
             return
            }
         }
-          
-        
-    
-            
-        
 
         if(!game.includes(""))
         {
             gameOn= false;
-            showresult.textContent=`its a draw `
+            showresult.textContent=`it's a draw `
             boxes.forEach(box=>box.classList.add("disabled"))
             return;
         }
-
-       
-
-
     }
-
-
 let handlereset =()=>
 {
      game.fill("");
      gameOn = true;
      currentPlayer="❌"
-     showresult.textContent= ""
+     showresult.textContent= "This will show result"
+     showresult.style.backgroundColor="rgb(239, 219, 177)";
      boxes.forEach( box=> {
         box.textContent=""
      
