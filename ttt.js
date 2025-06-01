@@ -27,8 +27,9 @@ let handleclick = (e) =>
        console.log(" e",e.target)
        e.target.textContent = currentPlayer;
        movesound.play();
-        currentPlayer=currentPlayer=="❌"?"⭕":"❌"
        seewhoisthewinner();
+        currentPlayer=currentPlayer=="❌"?"⭕":"❌"
+    
        
     }
 
