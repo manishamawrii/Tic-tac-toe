@@ -33,7 +33,7 @@ let handleclick = (e) =>
        
     }
 
-    let seewhoisthewinner= ()=>{
+    let seewhoisthewinner= (player)=>{
         for (const element of winnermatrix) {
            let [a,b,c]= element
            if(game[a]&&game[a]==game[b]&&game[b]==game[c] ) {
