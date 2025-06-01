@@ -38,7 +38,7 @@ let handleclick = (e) =>
            let [a,b,c]= element
            if(game[a]&&game[a]==game[b]&&game[b]==game[c] ) {
 
-            showresult.textContent= `🎉 🌟congratulation ${currentPlayer} is winner `
+            showresult.textContent= `🎉 🌟congratulation ${player} is winner `
 
             showresult.style.backgroundColor ="green"
             gameOn=false;
